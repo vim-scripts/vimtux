@@ -1,0 +1,13 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=4931
+
+This is a simple vim script to send portion of text from a vim buffer to a running tmux session.
+
+(1) This script provides the ability to send multiple keys to a tmux target at once.
+
+(2) The tmux target is set on buffer basis. This means that every tab in Vim can have its own tmux target. (E.g. you could have a tab in which you edit a Python script and send text and keys to a Python repl and another tab in which you edit an R script and send text and keys to an R repl.)
+
+(3) This script also includes functions to send text and key codes to a tmux session which ask for user input.
+
+(3) In this fork of tslime.vim, keybindings are not set automatically for you. Instead, you can map whatever you like to one of the plugin-specific bindings in your .vimrc file.
+
+See: https://github.com/lord-garbage/tslime.vim
