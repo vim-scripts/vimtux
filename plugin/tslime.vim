@@ -4,6 +4,7 @@
 "          K. Borges <kassioborges [at] gmail [dot] com>
 " Maintainer: C. Brauner <christianvanbrauner [at] gmail [dot] com>,
 " Last edited: 2014-05-03T00:35:06+0200
+" License: GPLv3
 
 if exists("g:loaded_tslime") && g:loaded_tslime
     finish
@@ -124,9 +125,9 @@ function! s:TmuxVars()
     else
         let b:tslime['session'] = ''
     endif
-    while b:tslime['session'] == ''
+    if b:tslime['session'] == ''
         let b:tslime['session'] = input("session name: ", "", "custom,TmuxSessionNames")
-    endwhile
+    end
 
     let windows = split(s:TmuxWindows(), "\n")
     if len(windows) == 1
@@ -165,10 +166,10 @@ nmap <unique> <Plug>SetTmuxVars :call <SID>TmuxVars()<CR>
 nmap <unique> <Plug>ExecuteKeysCc :call ExecuteKeys("c-c")<CR>
 
 " <Plug> definition for "C-l" shortcut.
-nmap <unique> <Plug>ExecuteKeysCl :call ExecuteKeys("c-l")<CR>
+nmap <unique> <Plug>ExecuteKeysCv :call ExecuteKeys("c-l")<CR>
 
 " <Plug> definition for "C-l" shortcut in bash vi editing mode.
-nmap <unique> <Plug>ExecuteKeysCv :call ExecuteKeys("c-[ c-l i")<CR>
+nmap <unique> <Plug>ExecuteKeysCl :call ExecuteKeys("c-[ c-l i")<CR>
 
 
 " <Plug> definition for ExecuteKeysPrompt().
@@ -198,7 +199,7 @@ command! -nargs=* Tmux call SendToTmux('<Args><CR>')
 " nmap <C-l> <Plug>ExecuteKeysCl
 "
 " " Key definition for "C-l" shortcut in bash vi editing mode.
-" nmap <C-v> <Plug>ExecuteKeysCv
+" nmap <C-x> <Plug>ExecuteKeysCv
 " 
 " " Key definition for ExecuteKeysPrompt() <Plug>.
 " nmap <Leader>sk <Plug>ExecuteKeysPlug
