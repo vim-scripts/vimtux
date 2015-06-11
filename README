@@ -1,5 +1,14 @@
 This is a mirror of http://www.vim.org/scripts/script.php?script_id=4931
 
+Installation
+
+Vundle:
+In your .vimrc place Plugin 'brauner/vimtux' between call vundle#begin() and call vundle#end(). Then open vim and install with :PluginInstall.
+
+Pathogen:
+cd ~/.vim/bundle
+git clone https://github.com/brauner/vimtux.git
+
 Find the current script on Github: https://github.com/lord-garbage/vimtux
 
 This is a simple Vim script to send text, commands and keys from a Vim buffer to a running tmux session. Its main objective is to stay as simple as possible following the famous KISS principle. This means it does not rely on the presence of any external files, programming languages whatsoever and it will stay that way. Forever. Period. It does exactly what it was designed for no more no less: Send text, commands and keys to any Tmux session via Vim. You will find the details below.
